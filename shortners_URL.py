@@ -1,7 +1,10 @@
 import pyshorteners
-"""Укорачивает длинные ссылки"""
+import pyperclip
+
+""" A simple URL shortening. """
+
+buf = pyperclip.paste()
 s = pyshorteners.Shortener()
-print("\n" + s.tinyurl.short(input("Enter URL: "))+"\n")
+pyperclip.copy(s.tinyurl.short(buf))
 
-input("Press any key to continue.")
-
+input("The shortened link is copied, press any key to continue.")
